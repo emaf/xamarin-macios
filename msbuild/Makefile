@@ -48,7 +48,7 @@ TRANSLATED_ASSEMBLIES = $(foreach locale,$(LOCALIZATION_LANGUAGES),$(locale)/Xam
 LOCALIZATION_ASSEMBLIES = Xamarin.Localization.MSBuild
 MESSAGING_ASSEMBLIES = Xamarin.Messaging
 IOS_TASK_ASSEMBLIES = Xamarin.iOS.Tasks $(LOCALIZATION_ASSEMBLIES) $(MESSAGING_ASSEMBLIES)
-IOS_WINDOWS_TASK_ASSEMBLIES = Xamarin.iOS.Tasks.Windows $(MESSAGING_ASSEMBLIES)
+IOS_WINDOWS_TASK_ASSEMBLIES = Xamarin.iOS.Tasks.Windows $(MESSAGING_ASSEMBLIES) $(LOCALIZATION_ASSEMBLIES)
 
 IOS_DIRECTORIES =                                                                                           \
 	$(IOS_DESTDIR)$(MONOTOUCH_PREFIX)/lib/mono/Xamarin.iOS                                                  \
