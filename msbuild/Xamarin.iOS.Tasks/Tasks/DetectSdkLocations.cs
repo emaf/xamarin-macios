@@ -10,7 +10,7 @@ namespace Xamarin.iOS.Tasks
 
 		public override bool Execute ()
 		{
-			if (string.IsNullOrEmpty (SessionId))
+			if (!ShouldExecuteRemotely())
 				return base.Execute ();
 
 			// The new targets do not support the "default" value for the MtouchSdkVersion

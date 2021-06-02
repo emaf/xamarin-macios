@@ -7,7 +7,7 @@ namespace Xamarin.iOS.Tasks
 	{
 		public override bool Execute ()
 		{
-			if (!string.IsNullOrEmpty (SessionId))
+			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
 				return new TaskRunner (SessionId, BuildEngine4).RunAsync (this).Result;
 
 			return base.Execute ();
