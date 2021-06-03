@@ -15,7 +15,7 @@ namespace Microsoft.Build.Tasks
 
 		public override bool Execute ()
 		{
-			if (string.IsNullOrEmpty (SessionId))
+			if (Environment.OSVersion.Platform != PlatformID.Win32NT)
 				return base.Execute ();
 
 			if (string.IsNullOrEmpty (ServerPassword))
@@ -60,7 +60,7 @@ namespace Microsoft.Build.Tasks
 
 		public override void Cancel ()
 		{
-			if (!string.IsNullOrEmpty (SessionId))
+			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
 				BuildConnection.CancelAsync (SessionId, BuildEngine4).Wait ();
 
 			base.Cancel ();
