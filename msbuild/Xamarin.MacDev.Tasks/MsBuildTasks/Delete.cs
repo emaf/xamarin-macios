@@ -9,7 +9,7 @@ namespace Microsoft.Build.Tasks
 		{
 			var result = base.Execute ();
 
-			if (Environment.OSVersion.Platform != PlatformID.Win32NT) {
+			if (Environment.OSVersion.Platform != PlatformID.Win32NT || string.IsNullOrEmpty (SessionId)) {
 				return result;
 			}
 

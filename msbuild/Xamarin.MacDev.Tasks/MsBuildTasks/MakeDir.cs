@@ -12,7 +12,7 @@ namespace Microsoft.Build.Tasks
 		{
 			var result = base.Execute ();
 
-			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+			if (Environment.OSVersion.Platform == PlatformID.Win32NT && !string.IsNullOrEmpty (SessionId))
 				result = new TaskRunner (SessionId, BuildEngine4).RunAsync (this).Result;
 
 			return result;

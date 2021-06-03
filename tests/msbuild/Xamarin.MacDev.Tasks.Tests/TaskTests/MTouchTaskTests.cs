@@ -219,7 +219,7 @@ namespace Xamarin.iOS.Tasks
 
 				var args = Task.GenerateCommandLineCommands ();
 
-				if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+				if (Environment.OSVersion.Platform == PlatformID.Win32NT && !string.IsNullOrEmpty (SessionId))
 					// In Windows, the path slashes are escaped.
 					expectedPath = expectedPath.Replace ("\\", "\\\\");
 
@@ -247,7 +247,7 @@ namespace Xamarin.iOS.Tasks
 
 				var args = Task.GenerateCommandLineCommands ();
 
-				if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+				if (Environment.OSVersion.Platform == PlatformID.Win32NT && !string.IsNullOrEmpty (SessionId))
 					// In Windows, the path slashes are escaped.
 					expectedPath = expectedPath.Replace ("\\", "\\\\");
 
@@ -272,7 +272,7 @@ namespace Xamarin.iOS.Tasks
 
 				var args = Task.GenerateCommandLineCommands ();
 
-				if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+				if (Environment.OSVersion.Platform == PlatformID.Win32NT && !string.IsNullOrEmpty (SessionId))
 					// In Windows, the path slashes are escaped.
 					expectedPath = expectedPath.Replace ("\\", "\\\\");
 

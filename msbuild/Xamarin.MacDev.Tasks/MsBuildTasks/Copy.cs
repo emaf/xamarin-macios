@@ -7,7 +7,7 @@ namespace Microsoft.Build.Tasks
 	{
 		public override bool Execute ()
 		{
-			if (Environment.OSVersion.Platform != PlatformID.Win32NT)
+			if (Environment.OSVersion.Platform != PlatformID.Win32NT || string.IsNullOrEmpty (SessionId))
 				return base.Execute ();
 
 			var taskRunner = new TaskRunner (SessionId, BuildEngine4);
